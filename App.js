@@ -1,20 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Screen1 from "./screens/Screen1";
+import Screen2 from "./screens/Screen2";
+import {useState} from "react";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const [screen, setScreen] = useState('1')
+  return (screen === "1" ? <Screen1 setScreen={setScreen}/> : <Screen2 setScreen={setScreen}/>);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

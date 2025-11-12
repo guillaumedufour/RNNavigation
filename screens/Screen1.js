@@ -1,16 +1,21 @@
 import {Text, StyleSheet, Pressable} from "react-native";
 
-export default function Screen1({setScreen}) {
+export default function Screen1(props) {
   return (
-    <Pressable onPress={() => setScreen("2")}>
+    <Pressable style={styles.container} onPress={() => {
+      props.navigation.navigate("Screen2");
+    }}>
       <Text>Screen1</Text>
     </Pressable>
   );
 }
 
+
 const styles = StyleSheet.create({
-  flex: 1,
-  backgroundColor: '#fff',
-  alignItems: 'center',
-  justifyContent: 'center',
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 })
